@@ -21,7 +21,7 @@ def main():
     st.title('자동차 연비, 가격 예측')
 
     #사이드바
-    menu = ['홈','데이터 정보','갤러리','상관계수 차트','연비 예측','가격 예측']
+    menu = ['홈','데이터 검색','갤러리','상관계수 차트','연비 예측','가격 예측']
     choice = st.sidebar.selectbox('홈 메뉴',menu)
 
     #사이드바 설정
@@ -46,7 +46,7 @@ def main():
         st.write('5. 가격 예측탭에서는 차량의 데이터를 입력하면 해당차량의 가격를 예측해드립니다.')
 
 
-    elif choice == '데이터 정보':
+    elif choice == '데이터 검색':
         run_df_app()
 
     elif choice == '갤러리':

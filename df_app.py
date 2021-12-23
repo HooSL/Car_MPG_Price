@@ -21,6 +21,8 @@ def run_df_app():
     else:
         st.write(' ')
 
+
+
 #검색
     st.subheader(" ")
     st.subheader(" ")
@@ -29,11 +31,23 @@ def run_df_app():
     word.lower()
     word.strip()
     df_search = df.loc[df['제조사'].str.lower().str.contains(word),]
-    if st.button('검색'):
+    if st.button('제조사 검색'):
         st.dataframe(df_search)
     else:
         st.write(' ')
 
+
+    st.subheader(" ")
+    st.subheader(" ")
+    st.subheader("차량 모델 검색")
+    word2 = st.text_input('차량 모델을 입력하세요')
+    word2.lower()
+    word2.strip()
+    df_search2 = df.loc[df['모델'].str.lower().str.contains(word2),]
+    if st.button('모델 검색'):
+        st.dataframe(df_search2)
+    else:
+        st.write(' ')
 
 
 
