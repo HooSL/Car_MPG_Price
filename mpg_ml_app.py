@@ -66,6 +66,7 @@ def run_mpg_ml_app():
         trans = [0,0,1,0]
     elif selected_radio =='Semi-Auto':
         trans = [0,0,0,1]
+    print(16)
     
 
 
@@ -81,37 +82,50 @@ def run_mpg_ml_app():
         fuel = [0,0,0,1,0]
     elif selected_radio =='Petrol':
         fuel = [0,0,0,0,1]
+    print(17)
 
     new_data = first_list + brand + trans + fuel
+    print(18)
     print(new_data)
+    print(19)
 
     #유저 데이터를 new_data 변수로 저장
     
 
     new_data = np.array([new_data])
-    
+    print(20)
     print(new_data)
+    print(21)
     new_data = new_data.reshape(1,18)
+    print(22)
     
     #인공지능 불러오기
     scaler_X = joblib.load('data/mpg_scaler_X.pkl')
+    print(23)
     scaler_y = joblib.load('data/mpg_scaler_y.pkl')
+    print(24)
     regressor = joblib.load('data/mpg_regressor.pkl')
+    print(25)
 
     #유저 데이터 피쳐스케일링
     new_data = scaler_X.transform(new_data)
-
+    print(26)
     #예측
     y_pred = regressor.predict(new_data)
-
+    print(27)
     #피쳐스케일링 한거 원래대로 복구
     #터미널로 확인
     print(y_pred)
+    print(28)
     y_pred = scaler_y.inverse_transform(y_pred.reshape(1,1))
+    print(29)
     print(y_pred)
-
+    print(30)
     #예측 결과를 웹 대시보드에 버튼 누르면 표시
     #round로 반올림
     btn = st.button('예측 결과 보기')
+    print(31)
     if btn :
+        print(32)
         st.write('해당 차량의 연비 예측 결과는 {} 입니다.'.format(round(y_pred[0,0],1)))
+    print(33)
