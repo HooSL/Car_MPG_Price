@@ -17,30 +17,43 @@ def run_mpg_ml_app():
 
     #파일 불러오기
     df = pd.read_csv('data/Car.csv',index_col=0)
-
+    print(1)
     #유저에게 숫자 데이터 받기
-
+    print(2)
     radio1_menu = ['Audi','BMW','Ford','Hyundai','Mercedes Benz','Toyota']
+    print(3)
     selected_radio = st.radio('제조사(Brand) 유형을 선택하세요.',radio1_menu)
+    print(4)
     if selected_radio =='Audi':
         brand = [1,0,0,0,0,0]
+        print(5)
     elif selected_radio =='BMW':
         brand = [0,1,0,0,0,0]
+        print(6)
     elif selected_radio =='Ford':
         brand = [0,0,1,0,0,0]
+        print(7)
     elif selected_radio =='Hyundai':
         brand = [0,0,0,1,0,0]
+        print(8)
     elif selected_radio =='Mercedes Benz':
         brand = [0,0,0,0,1,0]
+        print(9)
     elif selected_radio =='Toyota':
-        brand = [0,0,0,0,0,1]  
+        brand = [0,0,0,0,0,1]
+        print(10)
+    print(11)  
 
 
     year = st.number_input('모델연도(Model Year)',min_value=1900,max_value=2030)
+    print(12)
     mile = st.number_input('사용량(Milege)',min_value=0)
+    print(13)
     engin = st.number_input('배기량(Enginsize)',min_value=0.0)
+    print(14)
 
     first_list = [year,mile,engin]
+    print(15)
 
 
     radio2_menu = ['Automatic','Manual','Other','Semi-Auto']
