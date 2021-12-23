@@ -6,10 +6,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from PIL import Image
 
-from matplotlib import font_manager, rc
-font_path = "C:/Windows/Fonts/batang.ttc"
-font = font_manager.FontProperties(fname=font_path).get_name()
-rc('font', family=font)
 
 def run_gall_app():
     df = pd.read_csv('data/Car.csv',index_col=0)

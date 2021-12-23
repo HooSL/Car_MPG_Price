@@ -6,10 +6,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from PIL import Image
 
-from matplotlib import font_manager, rc
-font_path = "C:/Windows/Fonts/batang.ttc"
-font = font_manager.FontProperties(fname=font_path).get_name()
-rc('font', family=font)
 
 def run_corr_app():
     #서브헤더
