@@ -17,19 +17,26 @@ def run_price_ml_app():
 
     #유저에게 숫자 데이터 받기
     radio1_menu = ['Audi','BMW','Ford','Hyundai','Mercedes Benz','Toyota']
+    print(3)
     selected_radio = st.radio('제조사(Brand) 유형을 선택하세요.',radio1_menu)
+    print(4)
     if selected_radio =='Audi':
-        brand = [1,0,0,0,0,0]
+        brand = [0,0,0,0,0]
+        print(5)
     elif selected_radio =='BMW':
-        brand = [0,1,0,0,0,0]
+        brand = [1,0,0,0,0]
+        print(6)
     elif selected_radio =='Ford':
-        brand = [0,0,1,0,0,0]
+        brand = [0,1,0,0,0]
+        print(7)
     elif selected_radio =='Hyundai':
-        brand = [0,0,0,1,0,0]
+        brand = [0,0,1,0,0]
+        print(8)
     elif selected_radio =='Mercedes Benz':
-        brand = [0,0,0,0,1,0]
+        brand = [0,0,0,1,0]
+        print(9)
     elif selected_radio =='Toyota':
-        brand = [0,0,0,0,0,1]  
+        brand = [0,0,0,0,1]
 
 
     years = st.number_input('모델연도(Model Year)',min_value=1900,max_value=2030)
@@ -40,31 +47,25 @@ def run_price_ml_app():
     first_list = [years,miles,engins,mpgs]
 
 
-    radio2_menu = ['Automatic','Manual','Other','Semi-Auto']
+    radio2_menu = ['Automatic','Manual','Semi-Auto']
     selected_radio = st.radio('변속기(Transmission) 유형을 선택하세요.',radio2_menu)
     if selected_radio =='Automatic':
-        trans = [1,0,0,0]
+        trans = [0,0]
     elif selected_radio =='Manual':
-        trans = [0,1,0,0]
-    elif selected_radio =='Other':
-        trans = [0,0,1,0]
+        trans = [1,0]
     elif selected_radio =='Semi-Auto':
-        trans = [0,0,0,1]
+        trans = [0,1]
     
 
 
-    radio3_menu = ['Diesel','Electric','Hybrid','Other','Petrol']
+    radio3_menu = ['Diesel','Hybrid','Petrol']
     selected_radio = st.radio('연료(Fuel) 유형을 선택하세요.',radio3_menu)
     if selected_radio =='Diesel':
-        fuel = [1,0,0,0,0]
-    elif selected_radio =='Electric':
-        fuel = [0,1,0,0,0]
+        fuel = [0,0]
     elif selected_radio =='Hybrid':
-        fuel = [0,0,1,0,0]
-    elif selected_radio =='Other':
-        fuel = [0,0,0,1,0]
+        fuel = [1,0]
     elif selected_radio =='Petrol':
-        fuel = [0,0,0,0,1]
+        fuel = [0,1]
 
     new_data = first_list + brand + trans + fuel
     print(new_data)
@@ -75,7 +76,7 @@ def run_price_ml_app():
     new_data = np.array([new_data])
     
     print(new_data)
-    new_data = new_data.reshape(1,19)
+    new_data = new_data.reshape(1,13)
     
     #인공지능 불러오기
     scaler_X = joblib.load('data/price_scaler_X.pkl')

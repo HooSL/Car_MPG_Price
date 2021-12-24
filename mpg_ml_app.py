@@ -11,9 +11,6 @@ from functools import reduce
 import operator
 
 def run_mpg_ml_app():
-    st.subheader(' ')
-    st.subheader(' ')
-    st.subheader('연비 예측')
 
     #파일 불러오기
     df = pd.read_csv('data/Car.csv',index_col=0)
@@ -25,22 +22,22 @@ def run_mpg_ml_app():
     selected_radio = st.radio('제조사(Brand) 유형을 선택하세요.',radio1_menu)
     print(4)
     if selected_radio =='Audi':
-        brand = [1,0,0,0,0,0]
+        brand = [0,0,0,0,0]
         print(5)
     elif selected_radio =='BMW':
-        brand = [0,1,0,0,0,0]
+        brand = [1,0,0,0,0]
         print(6)
     elif selected_radio =='Ford':
-        brand = [0,0,1,0,0,0]
+        brand = [0,1,0,0,0]
         print(7)
     elif selected_radio =='Hyundai':
-        brand = [0,0,0,1,0,0]
+        brand = [0,0,1,0,0]
         print(8)
     elif selected_radio =='Mercedes Benz':
-        brand = [0,0,0,0,1,0]
+        brand = [0,0,0,1,0]
         print(9)
     elif selected_radio =='Toyota':
-        brand = [0,0,0,0,0,1]
+        brand = [0,0,0,0,1]
         print(10)
     print(11)  
 
@@ -56,32 +53,26 @@ def run_mpg_ml_app():
     print(15)
 
 
-    radio2_menu = ['Automatic','Manual','Other','Semi-Auto']
+    radio2_menu = ['Automatic','Manual','Semi-Auto']
     selected_radio = st.radio('변속기(Transmission) 유형을 선택하세요.',radio2_menu)
     if selected_radio =='Automatic':
-        trans = [1,0,0,0]
+        trans = [0,0]
     elif selected_radio =='Manual':
-        trans = [0,1,0,0]
-    elif selected_radio =='Other':
-        trans = [0,0,1,0]
+        trans = [1,0]
     elif selected_radio =='Semi-Auto':
-        trans = [0,0,0,1]
+        trans = [0,1]
     print(16)
     
 
 
-    radio3_menu = ['Diesel','Electric','Hybrid','Other','Petrol']
+    radio3_menu = ['Diesel','Hybrid','Petrol']
     selected_radio = st.radio('연료(Fuel) 유형을 선택하세요.',radio3_menu)
     if selected_radio =='Diesel':
-        fuel = [1,0,0,0,0]
-    elif selected_radio =='Electric':
-        fuel = [0,1,0,0,0]
+        fuel = [0,0]
     elif selected_radio =='Hybrid':
-        fuel = [0,0,1,0,0]
-    elif selected_radio =='Other':
-        fuel = [0,0,0,1,0]
+        fuel = [1,0]
     elif selected_radio =='Petrol':
-        fuel = [0,0,0,0,1]
+        fuel = [0,1]
     print(17)
 
     new_data = first_list + brand + trans + fuel
@@ -96,7 +87,7 @@ def run_mpg_ml_app():
     print(20)
     print(new_data)
     print(21)
-    new_data = new_data.reshape(1,18)
+    new_data = new_data.reshape(1,12)
     print(22)
     
     #인공지능 불러오기
