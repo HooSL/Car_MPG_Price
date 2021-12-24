@@ -30,6 +30,9 @@ def main():
         st.markdown("## 환영합니다!  ✧⁺⸜(  •⌄•  )⸝⁺✧")
         st.markdown("### Car MPG & Price에서는 고객님이 원하는 차량 데이터를 받고\n"
          "### 머신러닝을 통해 그에 맞는 연비 또는 가격을 알려드립니다.")
+        st.text('Brand of Data')
+        logo_img = Image.open('data/logo.jpg')
+        st.image(logo_img)
         st.subheader(' ')
         st.subheader('메뉴 소개')
         st.markdown("- 데이터 검색\n"
