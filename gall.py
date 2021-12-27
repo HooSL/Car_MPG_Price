@@ -42,7 +42,6 @@ def run_gall_app():
     
     car = ['Audi','BMW','Mercedes Benz','Hyundai','Ford','Toyota']
     st.subheader("차량 디자인")
-    st.write('text_input을 사용했으나 사용자 편의를 위해 selectbox로 변경했습니다.')
     word = st.selectbox('차량 제조사를 입력하세요.',car)
     
     if word == 'Audi':
