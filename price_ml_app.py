@@ -101,23 +101,3 @@ def run_price_ml_app():
     btn = st.button('예측 결과 보기')
     if btn :
         st.subheader('해당 차량의 가격 예측 결과는 ${} 입니다.'.format(round(y_pred[0,0],1)))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

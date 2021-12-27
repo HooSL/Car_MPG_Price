@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from PIL import Image
 from chart_app import run_chart_app
-from gall_app import run_gall_app
+
+from gall import run_gall_app
 from mpg_ml_app import run_mpg_ml_app
 from price_ml_app import run_price_ml_app
 
@@ -67,31 +68,6 @@ def main():
         run_price_ml_app()
         
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-
-
-
 

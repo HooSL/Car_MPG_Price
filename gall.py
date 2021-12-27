@@ -39,16 +39,12 @@ def run_gall_app():
 
     toyota_menu = ['GT86','Corolla','RAV4','Yaris','Auris','Aygo','C-HR','Prius','Avensis','Verso',
                 'Hilux','PROACE VERSO','Land Cruiser','Supra','Camry','Verso-S','IQ','Urban Cruiser']
-
+    
+    car = ['Audi','BMW','Mercedes Benz','Hyundai','Ford','Toyota']
     st.subheader("차량 디자인")
-    word = st.text_input('차량 제조사를 입력하세요.')
-    word.lower()
-    word.strip()
-    df_search = df.loc[df['제조사'].str.lower().str.contains(word),]
-    if word.lower() == '':
-        st.write('검색결과가 없습니다.')
-        
-    elif word.lower() == 'audi':
+    word = st.selectbox('차량 제조사를 입력하세요.',car)
+    
+    if word == 'Audi':
         audi_select = st.radio('모델을 선택하세요',audi_menu)
 
         if audi_select == 'A1':
@@ -234,7 +230,7 @@ def run_gall_app():
             st.dataframe(car_search)
         
 
-    elif word.lower() == 'bmw':
+    elif word == 'BMW':
         bmw_select = st.radio('모델을 선택하세요',bmw_menu)
         if bmw_select == '5 Series':
             img = Image.open('car_img/bmw/5 Series.jpg')
@@ -405,7 +401,7 @@ def run_gall_app():
 
 
 
-    elif word.lower() == 'ford':
+    elif word == 'Ford':
         ford_select = st.radio('모델을 선택하세요',ford_menu)
         if ford_select == 'Fiesta':
             img = Image.open('car_img/ford/Fiesta.jpg')
@@ -570,7 +566,7 @@ def run_gall_app():
 
         
 
-    elif word.lower() == 'hyundai':
+    elif word == 'Hyundai':
         hyundai_select = st.radio('모델을 선택하세요',hyundai_menu)
         if hyundai_select == 'I20':
             img = Image.open('car_img/hyundai/I20.jpg')
@@ -685,7 +681,7 @@ def run_gall_app():
             st.dataframe(car_search)
 
 
-    elif word.lower() == 'benz':
+    elif word == 'Mercedes Benz':
         merc_select = st.radio('모델을 선택하세요',merc_menu)
         if merc_select == 'SLK':
             img = Image.open('car_img/benz/SLK.jpg')
@@ -877,7 +873,7 @@ def run_gall_app():
             st.dataframe(car_search)
 
             
-    elif word.lower() == 'toyota':
+    elif word == 'Toyota':
         toyota_select = st.radio('모델을 선택하세요',toyota_menu)
         if toyota_select == 'GT86':
             img = Image.open('car_img/toyota/GT86.jpg')
@@ -1004,8 +1000,3 @@ def run_gall_app():
             st.write('현재 재고 데이터')
             car_search = df.loc[df['모델']==' Urban Cruiser',]
             st.dataframe(car_search)
-
-
-
-
-    
