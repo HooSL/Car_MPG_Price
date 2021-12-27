@@ -306,7 +306,7 @@ def run_gall_app():
             st.dataframe(car_search)
 
         elif bmw_select == 'i3':
-            img = Image.open('car_img/bmw/i3.jpg')
+            img = Image.open('car_img/bmw/I3.jpg')
             st.image(img)
             st.write('현재 재고 데이터')
             car_search = df.loc[df['모델']==' i3',]
@@ -369,7 +369,7 @@ def run_gall_app():
             st.dataframe(car_search)
 
         elif bmw_select == 'i8':
-            img = Image.open('car_img/bmw/i8.jpg')
+            img = Image.open('car_img/bmw/I8.jpg')
             st.image(img)
             st.write('현재 재고 데이터')
             car_search = df.loc[df['모델']==' i8',]
