@@ -14,6 +14,7 @@ def run_price_ml_app():
 
     #파일 불러오기
     df = pd.read_csv('data/Car.csv',index_col=0)
+    st.write('Google의 Colab에서 MinMaxScaler와 RandomForestRegressor를 이용해 만든 머신러닝입니다.')
 
     #유저에게 숫자 데이터 받기
     radio1_menu = ['Audi','BMW','Ford','Hyundai','Mercedes Benz','Toyota']

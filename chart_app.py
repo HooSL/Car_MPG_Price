@@ -16,7 +16,7 @@ def run_chart_app():
     df.columns=['brand','model','model year','mileage','enginsize','transmission','fuel','mpg','price']
 
     st.subheader('차트')
-    
+    st.write('')
     word = st.text_input('차량 제조사를 입력하세요')
     word.lower()
     word.strip()
@@ -26,7 +26,7 @@ def run_chart_app():
     selected_column = st.selectbox('컬럼을 선택하세요.',df_search.columns)
 
     bins=st.slider('bin의 개수 조절',min_value=10,max_value=50)
-
+    st.write('컬럼별 히스토그램입니다.')
     fig1 = plt.figure()
     plt.xticks(rotation=65)
     df_search[selected_column].hist(bins=bins)

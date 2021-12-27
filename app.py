@@ -61,10 +61,11 @@ def main():
 
     elif choice == '연비 예측':
         run_mpg_ml_app()
-
+        
 
     elif choice == '가격 예측':
         run_price_ml_app()
+        
 
 
 

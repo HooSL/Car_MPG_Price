@@ -10,7 +10,7 @@ from PIL import Image
 def run_gall_app():
     df = pd.read_csv('data/Car.csv',index_col=0)
     st.subheader('데이터 자료입니다.')
-    st.write('데이터 출처 : https://www.kaggle.com/adityadesai13/used-car-dataset-ford-and-mercedes?select=audi.csv')
+    st.write('데이터 출처(Kaggle) : https://www.kaggle.com/adityadesai13/used-car-dataset-ford-and-mercedes?select=audi.csv')
     if st.checkbox('데이터 전체보기'):
         st.dataframe(df)
         st.write('데이터 개수 64131개')
